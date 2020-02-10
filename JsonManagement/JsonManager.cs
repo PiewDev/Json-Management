@@ -67,7 +67,7 @@ namespace JsonManagement
         ///<param name="obj"> Object of any type. </param>
         ///<param name="name"> Name to save .json file. </param>
         ///<param name="path"> path without the name to save .json file. </param>
-        public static void SerializeIn(this object obj, string name, string path)
+        public static void SerializeIn(this object obj, string path, string name)
         {
             try
             {
@@ -212,7 +212,7 @@ namespace JsonManagement
         ///<param name="name"> Just the name of .json file. </param>
         ///<param name="path"> path without the name of .json file. </param>
         ///<param name="obj"> Object of any type. </param>
-        public static T DeserializeIn<T>(this T obj, string name, string path)
+        public static T DeserializeIn<T>(this T obj, string path, string name)
         {
             var route = GetPath(name, path);
             if (!File.Exists(route))
