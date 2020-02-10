@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JsonManagement</name>
+    </assembly>
+    <members>
+        <member name="M:JsonManagement.JsonManager.Serialize(System.Object)">
+            <summary> 
+            Create a .json from an object. 
+            </summary>  
+            <param name="obj"> Object of any type. </param>
+        </member>
+        <member name="M:JsonManagement.JsonManager.Serialize(System.Object,System.String)">
+            <summary> 
+            Create a .json from an object. 
+            </summary>  
+            <param name="obj"> Object of any type. </param>
+            <param name="name"> Just the name to save .json file. </param>
+        </member>
+        <member name="M:JsonManagement.JsonManager.SerializeIn(System.Object,System.String)">
+            <summary> 
+            Create a .json file from an object on a specific path. 
+            </summary>  
+            <param name="obj"> Object of any type. </param>
+            <param name="path"> path without the name to save .json file. </param>        
+        </member>
+        <member name="M:JsonManagement.JsonManager.SerializeIn(System.Object,System.String,System.String)">
+            <summary> 
+             Create a .json file from an object on a specific path. 
+            </summary>  
+            <param name="obj"> Object of any type. </param>
+            <param name="name"> Name to save .json file. </param>
+            <param name="path"> path without the name to save .json file. </param>
+        </member>
+        <member name="M:JsonManagement.JsonManager.Deserialize``1">
+            <summary> 
+             Read a .json file and convert in a any object with empty constructor. 
+            </summary> 
+            <returns> An object with empty constructor from .Json file or an empty object. </returns>       
+        </member>
+        <member name="M:JsonManagement.JsonManager.Deserialize``1(System.String)">
+            <summary> 
+             Read a .json file and convert in a any object with empty constructor.
+            </summary> 
+            <returns> An object with empty constructor from .Json file or an empty object. </returns>
+            <param name="name"> Just the name of .json file. </param>
+        </member>
+        <member name="M:JsonManagement.JsonManager.DeserializeIn``1(System.String)">
+            <summary> 
+             Read a .json file and convert in a any object with empty constructor.
+            </summary> 
+            <returns> An object with empty constructor from .Json file or an empty object. </returns>
+            <param name="path">  path without the name of .json file. </param>
+        </member>
+        <member name="M:JsonManagement.JsonManager.DeserializeIn``1(System.String,System.String)">
+            <summary> 
+             Read a .json file and convert in a any object with empty constructor 
+            </summary> 
+            <returns>An object with empty constructor from .Json file or an empty object. </returns>
+            <param name="name"> Just the name of .json file. </param>
+            <param name="path"> Instance of class FilePath with the path of .json file. </param>
+        </member>
+        <member name="M:JsonManagement.JsonManager.Deserialize``1(``0)">
+            <summary> 
+             Read a .json file and convert in a any object
+            </summary> 
+            <returns> An object from .json file or an empty object. </returns>     
+            <param name="obj"> Object of any type. </param>
+        </member>
+        <member name="M:JsonManagement.JsonManager.Deserialize``1(``0,System.String)">
+            <summary> 
+             Read a .json file and convert in a any object
+            </summary> 
+            <returns> An object from .json file or an empty object. </returns>
+            <param name="name"> Just the name of .json file. </param>
+            <param name="obj"> Object of any type. </param>
+        </member>
+        <member name="M:JsonManagement.JsonManager.DeserializeIn``1(``0,System.String,System.String)">
+            <summary> 
+             Read a .json file and convert in a any object
+            </summary> 
+            <returns> An object from .json file or an empty object. </returns>
+            <param name="name"> Just the name of .json file. </param>
+            <param name="path"> path without the name of .json file. </param>
+            <param name="obj"> Object of any type. </param>
+        </member>
+        <member name="M:JsonManagement.JsonManager.DeserializeIn``1(``0,System.String)">
+            <summary> 
+             Read a .json file and convert in a any object
+            </summary> 
+            <returns> An object from .json file or an empty object. </returns>
+            <param name="path"> path without the name of .json file. </param>
+            <param name="obj"> Object of any type. </param>
+        </member>
+    </members>
+</doc>

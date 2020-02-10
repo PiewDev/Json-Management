@@ -1,0 +1,9 @@
+C:\Users\ppabl\source\repos\JsonManagement\JsonManagement\bin\Debug\JsonManagement.dll
+C:\Users\ppabl\source\repos\JsonManagement\JsonManagement\bin\Debug\JsonManagement.pdb
+C:\Users\ppabl\source\repos\JsonManagement\JsonManagement\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ppabl\source\repos\JsonManagement\JsonManagement\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ppabl\source\repos\JsonManagement\JsonManagement\obj\Debug\JsonManagement.csproj.CopyComplete
+C:\Users\ppabl\source\repos\JsonManagement\JsonManagement\obj\Debug\JsonManagement.dll
+C:\Users\ppabl\source\repos\JsonManagement\JsonManagement\obj\Debug\JsonManagement.pdb
+C:\Users\ppabl\source\repos\JsonManagement\JsonManagement\bin\Debug\JsonManagement.xml
+C:\Users\ppabl\source\repos\JsonManagement\JsonManagement\obj\Debug\JsonManagement.csprojAssemblyReference.cache

@@ -2,15 +2,17 @@
 using System;
 using System.IO;
 
-namespace Datos
+namespace JsonManagement
 {
     public static class JsonManager
     {
+        public static string DefaultPath = Directory.GetCurrentDirectory();
+
         ///<summary> 
         ///Create a .json from an object. 
         ///</summary>  
         ///<param name="obj"> Object of any type. </param>
-        public static void Serialize(this object obj)
+        public static void Serialize (this object obj)
         {
             try
             {
@@ -167,7 +169,7 @@ namespace Datos
         ///</summary> 
         ///<returns> An object from .json file or an empty object. </returns>     
         ///<param name="obj"> Object of any type. </param>
-        public static T Deserialize<T>(T obj)
+        public static T Deserialize<T>(this T obj)
         {
             string path = GetPath(typeof(T).Name);
             if (!File.Exists(path))
@@ -190,7 +192,7 @@ namespace Datos
         ///<returns> An object from .json file or an empty object. </returns>
         ///<param name="name"> Just the name of .json file. </param>
         ///<param name="obj"> Object of any type. </param>
-        public static T Deserialize<T>(T obj, string name) where T : new()
+        public static T Deserialize<T>(this T obj, string name) where T : new()
         {
             string path = GetPath(name);
             if (!File.Exists(path))
@@ -210,7 +212,7 @@ namespace Datos
         ///<param name="name"> Just the name of .json file. </param>
         ///<param name="path"> path without the name of .json file. </param>
         ///<param name="obj"> Object of any type. </param>
-        public static T DeserializeIn<T>(T obj, string name, string path)
+        public static T DeserializeIn<T>(this T obj, string name, string path)
         {
             var route = GetPath(name, path);
             if (!File.Exists(route))
@@ -230,7 +232,7 @@ namespace Datos
         ///<returns> An object from .json file or an empty object. </returns>
         ///<param name="path"> path without the name of .json file. </param>
         ///<param name="obj"> Object of any type. </param>
-        public static T DeserializeIn<T>(T obj, string path) where T : new()
+        public static T DeserializeIn<T>(this T obj, string path) where T : new()
         {
             string route = GetPath(typeof(T).Name, path);
             if (!File.Exists(route))
@@ -245,7 +247,7 @@ namespace Datos
 
         private static string GetPath(object obj)
         {
-            return Directory.GetCurrentDirectory() + "\\" + obj.GetType().Name + ".json";
+            return DefaultPath + "\\" + obj.GetType().Name + ".json";
         }
         private static string GetPath(object obj, string path)
         {
@@ -255,7 +257,7 @@ namespace Datos
 
         private static string GetPath(string name)
         {
-            return Directory.GetCurrentDirectory() + "\\" + name + ".json";
+            return DefaultPath + "\\" + name + ".json";
         }
         private static string GetPath(string name, string path)
         {
