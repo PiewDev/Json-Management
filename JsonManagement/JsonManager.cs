@@ -149,7 +149,7 @@ namespace JsonManagement
         ///<returns>An object with empty constructor from .Json file or an empty object. </returns>
         ///<param name="name"> Just the name of .json file. </param>
         ///<param name="path"> Instance of class FilePath with the path of .json file. </param>
-        public static T DeserializeIn<T>(string name, string path) where T : new()
+        public static T DeserializeIn<T>(string path, string name) where T : new()
         {
             var route = GetPath(name, path);
             if (!File.Exists(route))
@@ -192,7 +192,7 @@ namespace JsonManagement
         ///<returns> An object from .json file or an empty object. </returns>
         ///<param name="name"> Just the name of .json file. </param>
         ///<param name="obj"> Object of any type. </param>
-        public static T Deserialize<T>(this T obj, string name) where T : new()
+        public static T Deserialize<T>(this T obj, string name)
         {
             string path = GetPath(name);
             if (!File.Exists(path))
@@ -232,7 +232,7 @@ namespace JsonManagement
         ///<returns> An object from .json file or an empty object. </returns>
         ///<param name="path"> path without the name of .json file. </param>
         ///<param name="obj"> Object of any type. </param>
-        public static T DeserializeIn<T>(this T obj, string path) where T : new()
+        public static T DeserializeIn<T>(this T obj, string path)
         {
             string route = GetPath(typeof(T).Name, path);
             if (!File.Exists(route))
