@@ -4,15 +4,15 @@ using System.IO;
 
 namespace JsonManagement
 {
-    public static class JsonManager
+    internal static class JsonManager
     {
-        public static string DefaultPath = Directory.GetCurrentDirectory();
+        
 
         ///<summary> 
         ///Create a .json from an object. 
         ///</summary>  
         ///<param name="obj"> Object of any type. </param>
-        public static void Serialize (this object obj)
+        internal static void Serialize (this object obj)
         {
             try
             {
@@ -30,7 +30,7 @@ namespace JsonManagement
         ///</summary>  
         ///<param name="obj"> Object of any type. </param>
         ///<param name="name"> Just the name to save .json file. </param>
-        public static void Serialize(this object obj, string name)
+        internal static void Serialize(this object obj, string name)
         {
             try
             {
@@ -48,7 +48,7 @@ namespace JsonManagement
         ///</summary>  
         ///<param name="obj"> Object of any type. </param>
         ///<param name="path"> path without the name to save .json file. </param>        
-        public static void SerializeIn(this object obj, string path)
+        internal static void SerializeIn(this object obj, string path)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace JsonManagement
         ///<param name="obj"> Object of any type. </param>
         ///<param name="name"> Name to save .json file. </param>
         ///<param name="path"> path without the name to save .json file. </param>
-        public static void SerializeIn(this object obj, string path, string name)
+        internal static void SerializeIn(this object obj, string path, string name)
         {
             try
             {
@@ -87,7 +87,7 @@ namespace JsonManagement
         /// Read a .json file and convert in a any object with empty constructor. 
         ///</summary> 
         ///<returns> An object with empty constructor from .Json file or an empty object. </returns>       
-        public static T Deserialize<T>() where T : new()
+        internal static T Deserialize<T>() where T : new()
         {
             string path = GetPath(typeof(T).Name);
             if (!File.Exists(path))
@@ -110,7 +110,7 @@ namespace JsonManagement
         ///</summary> 
         ///<returns> An object with empty constructor from .Json file or an empty object. </returns>
         ///<param name="name"> Just the name of .json file. </param>
-        public static T Deserialize<T>(string name) where T : new()
+        internal static T Deserialize<T>(string name) where T : new()
         {
             string path = GetPath(name);
             if (!File.Exists(path))
@@ -129,7 +129,7 @@ namespace JsonManagement
         ///</summary> 
         ///<returns> An object with empty constructor from .Json file or an empty object. </returns>
         ///<param name="path">  path without the name of .json file. </param>
-        public static T DeserializeIn<T>(string path) where T : new()
+        internal static T DeserializeIn<T>(string path) where T : new()
         {
             string route = GetPath(typeof(T).Name, path);
             if (!File.Exists(route))
@@ -149,7 +149,7 @@ namespace JsonManagement
         ///<returns>An object with empty constructor from .Json file or an empty object. </returns>
         ///<param name="name"> Just the name of .json file. </param>
         ///<param name="path"> Instance of class FilePath with the path of .json file. </param>
-        public static T DeserializeIn<T>(string name, string path) where T : new()
+        internal static T DeserializeIn<T>(string path, string name) where T : new()
         {
             var route = GetPath(name, path);
             if (!File.Exists(route))
@@ -169,7 +169,7 @@ namespace JsonManagement
         ///</summary> 
         ///<returns> An object from .json file or an empty object. </returns>     
         ///<param name="obj"> Object of any type. </param>
-        public static T Deserialize<T>(this T obj)
+        internal static T Deserialize<T>(this T obj)
         {
             string path = GetPath(typeof(T).Name);
             if (!File.Exists(path))
@@ -192,7 +192,7 @@ namespace JsonManagement
         ///<returns> An object from .json file or an empty object. </returns>
         ///<param name="name"> Just the name of .json file. </param>
         ///<param name="obj"> Object of any type. </param>
-        public static T Deserialize<T>(this T obj, string name) where T : new()
+        internal static T Deserialize<T>(this T obj, string name) where T : new()
         {
             string path = GetPath(name);
             if (!File.Exists(path))
@@ -232,7 +232,7 @@ namespace JsonManagement
         ///<returns> An object from .json file or an empty object. </returns>
         ///<param name="path"> path without the name of .json file. </param>
         ///<param name="obj"> Object of any type. </param>
-        public static T DeserializeIn<T>(this T obj, string path) where T : new()
+        internal static T DeserializeIn<T>(this T obj, string path)
         {
             string route = GetPath(typeof(T).Name, path);
             if (!File.Exists(route))
@@ -247,7 +247,7 @@ namespace JsonManagement
 
         private static string GetPath(object obj)
         {
-            return DefaultPath + "\\" + obj.GetType().Name + ".json";
+            return FileManager.DefaultPath + "\\" + obj.GetType().Name + ".json";
         }
         private static string GetPath(object obj, string path)
         {
@@ -257,7 +257,7 @@ namespace JsonManagement
 
         private static string GetPath(string name)
         {
-            return DefaultPath + "\\" + name + ".json";
+            return FileManager.DefaultPath + "\\" + name + ".json";
         }
         private static string GetPath(string name, string path)
         {
